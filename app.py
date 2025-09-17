@@ -29,8 +29,8 @@ llm = ChatOpenAI(model_name="gpt-4", temperature=0)
 qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
 while True:
-    question = input("👤 Ask: ")
+    question = input("Ask: ")
     if question.lower() in ["exit", "quit"]:
         break
     answer = qa_chain.run(question)
-    print("🤖 Answer:", answer)
+    print("Answer:", answer)
